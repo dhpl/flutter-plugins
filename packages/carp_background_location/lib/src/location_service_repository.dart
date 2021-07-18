@@ -10,17 +10,17 @@ class LocationServiceRepository {
   static const String isolateName = 'LocatorIsolate';
 
   Future<void> init(Map<dynamic, dynamic> params) async {
-    final SendPort? send = IsolateNameServer.lookupPortByName(isolateName);
+    final SendPort send = IsolateNameServer.lookupPortByName(isolateName);
     send?.send(null);
   }
 
   Future<void> dispose() async {
-    final SendPort? send = IsolateNameServer.lookupPortByName(isolateName);
+    final SendPort send = IsolateNameServer.lookupPortByName(isolateName);
     send?.send(null);
   }
 
   Future<void> callback(LocationDto locationDto) async {
-    final SendPort? send = IsolateNameServer.lookupPortByName(isolateName);
+    final SendPort send = IsolateNameServer.lookupPortByName(isolateName);
     send?.send(locationDto);
   }
 

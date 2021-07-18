@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  background_locator: ^1.6.2+1-beta
+  background_locator: ^1.6.4
   location_permissions: ^4.0.0
 
 dev_dependencies:

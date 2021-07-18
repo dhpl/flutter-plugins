@@ -8,7 +8,7 @@ part of carp_background_location;
 ///
 class LocationManager {
   ReceivePort _port = ReceivePort();
-  Stream<LocationDto>? _locationStream;
+  Stream<LocationDto> _locationStream;
   String _channelName = "BackgroundLocationChannel",
       _notificationTitle = "Background Location",
       _notificationMsg = "Your location is being tracked";
@@ -25,7 +25,7 @@ class LocationManager {
           .where((event) => event != null)
           .map((location) => location as LocationDto);
     }
-    return _locationStream!;
+    return _locationStream;
   }
 
   /// Get the status of the location manager.
@@ -110,6 +110,7 @@ class LocationManager {
         } else {
           return false;
         }
+        return false;
       case PermissionStatus.granted:
         return true;
       default:
